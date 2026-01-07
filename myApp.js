@@ -4,8 +4,11 @@ let app = express();
 
 console.log("Hello World");
 
-// Serve static files from /public
+// Normal usage
 app.use(express.static(__dirname + "/public"));
+
+// Assets at the /public route
+app.use("/public", express.static(__dirname + "/public"));
 
 // Serve HTML file
 app.get("/", function(req, res) {
