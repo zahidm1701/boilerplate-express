@@ -15,6 +15,7 @@ app.get("/", function(req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+// point your browser to your-app-url/json, you should see the message on the screen.
 app.get("/json", (req, res) => {
   res.json({
     message: "Hello json"
