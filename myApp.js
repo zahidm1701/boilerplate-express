@@ -1,11 +1,10 @@
+require('dotenv').config();
+
 let express = require('express');
 let app = express();
 
 
 console.log("Hello World");
-
-// Normal usage
-app.use(express.static(__dirname + "/public"));
 
 // Assets at the /public route
 app.use("/public", express.static(__dirname + "/public"));
@@ -16,12 +15,17 @@ app.get("/", function(req, res) {
 });
 
 // point your browser to your-app-url/json, you should see the message on the screen.
-app.get("/json", (req, res) => {
-  res.json({
-    message: "Hello json"
-  });
+app.get("/json", function(req, res) => {
+  let message = "Hello Jsoni";
+
+  if (process.env.MESSAGE_STYLE === "uppercase") {
+    message = message.toUpperCase();
+  }
+  
+  res.json({ message: "Hello json" });
 });
 
+module.exports = app;
 
 
 
