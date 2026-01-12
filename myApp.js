@@ -15,7 +15,7 @@ app.get("/", function(req, res) {
 });
 
 // point your browser to your-app-url/json, you should see the message on the screen.
-app.get("/json", function(req, res) => {
+app.get("/json", function(req, res) {
   let message = "Hello Jsoni";
 
   if (process.env.MESSAGE_STYLE === "uppercase") {
@@ -24,9 +24,6 @@ app.get("/json", function(req, res) => {
   
   res.json({ message: "Hello json" });
 });
-
-module.exports = app;
-
 
 
 
