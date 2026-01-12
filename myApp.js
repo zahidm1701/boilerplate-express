@@ -24,7 +24,7 @@ app.get("/json", function(req, res) {
     message = message.toUpperCase();
   }
   
-  res.json({ message: "message" });
+  res.json({ message: message });
 });
 
 
