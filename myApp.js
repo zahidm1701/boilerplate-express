@@ -16,7 +16,9 @@ app.get("/", function(req, res) {
 
 // point your browser to your-app-url/json, you should see the message on the screen.
 app.get("/json", function(req, res) {
-  let message = "Hello Jsoni";
+  console.log("ENV VALUE:", process.env.MESSAGE_STYLE);
+  
+  let message = "Hello Json";
 
   if (process.env.MESSAGE_STYLE === "uppercase") {
     message = message.toUpperCase();
